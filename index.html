@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b3b66" />
+  <title>Transpetro 2026 — Administração e Controle</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Transpetro 2026</h1>
+      <p>Administração e Controle — teoria dos conhecimentos específicos</p>
+    </div>
+    <div class="toolbar">
+      <button id="themeBtn" aria-label="Alternar tema">◐</button>
+      <button id="fontMinus" aria-label="Diminuir fonte">A−</button>
+      <button id="fontPlus" aria-label="Aumentar fonte">A+</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <input id="search" type="search" placeholder="Buscar no edital…" />
+      <div id="progressWrap">
+        <div class="progress-label"><span>Progresso</span><strong id="progressText">0%</strong></div>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+      <nav id="nav"></nav>
+    </aside>
+
+    <main id="content" class="content">
+      <section class="hero">
+        <span class="eyebrow">Apostila digital</span>
+        <h2>Estudo teórico completo dos específicos</h2>
+        <p>Escolha um tópico no menu. O conteúdo foi organizado por bloco do edital e estruturado para leitura no tablet, com teoria, exemplos, comparações e esquemas visuais.</p>
+        <div class="hero-grid">
+          <div class="hero-card"><strong>4</strong><span>grandes blocos</span></div>
+          <div class="hero-card"><strong>30+</strong><span>tópicos do edital</span></div>
+          <div class="hero-card"><strong>2026</strong><span>conteúdo atualizado</span></div>
+        </div>
+      </section>
+      <section class="home-note">
+        <h3>Como usar</h3>
+        <p>Leia um tópico por vez, marque como concluído e depois peça simulados aqui no ChatGPT. Este app é focado apenas em teoria.</p>
+      </section>
+    </main>
+  </div>
+
+  <template id="articleTemplate">
+    <article class="article">
+      <div class="article-head">
+        <div>
+          <span class="eyebrow" data-area></span>
+          <h2 data-title></h2>
+        </div>
+        <button class="read-btn" data-read>Marcar como lido</button>
+      </div>
+      <div data-body></div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
