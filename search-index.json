@@ -1,0 +1,416 @@
+[
+  {
+    "title": "Recrutamento e Seleção",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "recrutamento interno, externo e misto fontes de recrutamento técnicas de seleção: currículo, entrevista, testes e provas perfil do cargo e critérios de seleção validade, confiabilidade e padronização dos instrumentos recrutamento seleção recrutamento atrai candidatos; seleção compara e escolhe",
+    "url": "/topicos-processos-recrutamento-e-selecao.html"
+  },
+  {
+    "title": "Plano de Cargos e Carreira",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "cargo como conjunto de responsabilidades função como atividades efetivamente exercidas descrição de cargo especificação do cargo carreira, progressão e promoção cargo carreira descrição responde o que o cargo faz; especificação responde o que a pessoa precisa ter",
+    "url": "/topicos-processos-plano-de-cargos-e-carreira.html"
+  },
+  {
+    "title": "Treinamento, Desenvolvimento e Educação",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "levantamento de necessidades planejamento da capacitação execução avaliação de reação, aprendizagem, transferência e resultados desenvolvimento de longo prazo e educação corporativa transferência treinamento atende lacuna atual; desenvolvimento prepara desafios futuros",
+    "url": "/topicos-processos-treinamento-desenvolvimento-e-educacao.html"
+  },
+  {
+    "title": "Gerenciamento de Desempenho",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "definição de objetivos acompanhamento contínuo feedback avaliação com critérios claros plano de desenvolvimento feedback avaliação de desempenho é uma etapa; gestão de desempenho é o ciclo completo",
+    "url": "/topicos-processos-gerenciamento-de-desempenho.html"
+  },
+  {
+    "title": "Gestão por Competências",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "conhecimentos, habilidades e atitudes competências organizacionais e individuais mapeamento lacunas de competência ações de desenvolvimento e captação CHA gap competência não é diploma; é capacidade mobilizada no contexto de trabalho",
+    "url": "/topicos-processos-gestao-por-competencias.html"
+  },
+  {
+    "title": "Relações de Trabalho e Benefícios",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "remuneração direta e indireta benefícios legais e organizacionais comunicação e conflitos saúde, segurança e bem-estar negociação coletiva e regras internas benefício salário não é benefício; benefício não é necessariamente pago em dinheiro",
+    "url": "/topicos-processos-relacoes-de-trabalho-e-beneficios.html"
+  },
+  {
+    "title": "Princípios de Integração de Sistemas de Gestão",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "abordagem por processos PDCA integração de políticas, objetivos e controles riscos e oportunidades documentação e evidências SGI PDCA integrar sistemas não é apenas reunir documentos; é coordenar processos e controles",
+    "url": "/topicos-processos-principios-de-integracao-de-sistemas-de-gestao.html"
+  },
+  {
+    "title": "Auditorias Internas e Ações Corretivas/Preventivas",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "critério, evidência e achado planejamento e relatório de auditoria não conformidade correção ação corretiva e prevenção por risco não conformidade evidência correção trata o efeito imediato; ação corretiva busca a causa",
+    "url": "/topicos-processos-auditorias-internas-e-acoes-corretivas-preventivas.html"
+  },
+  {
+    "title": "Melhoria Contínua e Gestão Integrada de Riscos",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "identificação de riscos análise de probabilidade e impacto tratamento e controles monitoramento lições aprendidas e melhoria risco residual risco não é apenas ameaça; pode incluir oportunidade",
+    "url": "/topicos-processos-melhoria-continua-e-gestao-integrada-de-riscos.html"
+  },
+  {
+    "title": "Controle e Inventário Patrimonial",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "identificação/tombamento registro de localização e responsável inventário físico conciliação transferência, manutenção e baixa tombamento inventário não é mera contagem; envolve conciliar físico e registros",
+    "url": "/topicos-processos-controle-e-inventario-patrimonial.html"
+  },
+  {
+    "title": "Classificação, Avaliação e Depreciação de Bens",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "custo de aquisição vida útil valor residual depreciação acumulada valor contábil líquido vida útil valor residual depreciação é reconhecimento contábil e não saída de caixa do período",
+    "url": "/topicos-processos-classificacao-avaliacao-e-depreciacao-de-bens.html"
+  },
+  {
+    "title": "Gestão de Ativos",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "ciclo de vida do ativo criticidade custo total do ciclo de vida disponibilidade e confiabilidade integração com manutenção e finanças criticidade gestão patrimonial controla bens; gestão de ativos busca gerar valor ao longo do ciclo de vida",
+    "url": "/topicos-processos-gestao-de-ativos.html"
+  },
+  {
+    "title": "Manutenção Corretiva, Preventiva e Preditiva",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "corretiva após falha preventiva por tempo/uso preditiva por condição monitoramento de vibração, temperatura e desgaste criticidade do ativo preditiva preventiva é programada; preditiva depende da condição observada",
+    "url": "/topicos-processos-manutencao-corretiva-preventiva-e-preditiva.html"
+  },
+  {
+    "title": "Planejamento e Controle da Manutenção",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "plano de manutenção ordens de serviço programação de pessoas, peças e janelas backlog indicadores de disponibilidade e cumprimento backlog planejamento prepara recursos; controle compara executado com planejado",
+    "url": "/topicos-processos-planejamento-e-controle-da-manutencao.html"
+  },
+  {
+    "title": "Acompanhamento de Indicadores",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "indicadores de entrada, processo, saída e resultado meta e linha de base periodicidade qualidade de dados série histórica KPI indicador mede; meta define resultado desejado",
+    "url": "/topicos-processos-acompanhamento-de-indicadores.html"
+  },
+  {
+    "title": "Análise de Indicadores para Tomada de Decisão",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "tendência e variação comparação com meta e histórico análise causal segmentação plano de ação benchmark correlação não prova causalidade",
+    "url": "/topicos-processos-analise-de-indicadores-para-tomada-de-decisao.html"
+  },
+  {
+    "title": "Indicadores de Desempenho ESG",
+    "block": "Processos Administrativos e Legislação",
+    "keywords": "ambiental: emissões, água, resíduos e energia social: pessoas, segurança, diversidade e comunidades governança: ética, controles e transparência materialidade indicadores absolutos e de intensidade materialidade ESG não é sinônimo de meio ambiente",
+    "url": "/topicos-processos-indicadores-de-desempenho-esg.html"
+  },
+  {
+    "title": "Porcentagem e Descontos",
+    "block": "Finanças e Contabilidade",
+    "keywords": "percentual como razão por 100 fatores de aumento e redução descontos sucessivos variação percentual base de cálculo fator percentuais sucessivos atuam sobre bases atualizadas",
+    "url": "/topicos-financas-porcentagem-e-descontos.html"
+  },
+  {
+    "title": "Juros Simples",
+    "block": "Finanças e Contabilidade",
+    "keywords": "capital taxa prazo juros montante capital montante juros são calculados sempre sobre o capital inicial",
+    "url": "/topicos-financas-juros-simples.html"
+  },
+  {
+    "title": "Juros Compostos",
+    "block": "Finanças e Contabilidade",
+    "keywords": "capitalização fator de acumulação valor presente valor futuro taxa efetiva capitalização cada período incide sobre o saldo acumulado",
+    "url": "/topicos-financas-juros-compostos.html"
+  },
+  {
+    "title": "Princípios e Práticas Contábeis Fundamentais",
+    "block": "Finanças e Contabilidade",
+    "keywords": "ativo passivo patrimônio líquido receita despesa equação patrimonial ativo passivo receita não é recebimento; despesa não é pagamento",
+    "url": "/topicos-financas-principios-e-praticas-contabeis-fundamentais.html"
+  },
+  {
+    "title": "Registros Contábeis e Partidas Dobradas",
+    "block": "Finanças e Contabilidade",
+    "keywords": "contas patrimoniais e de resultado débito e crédito lançamento razonete documentação de suporte lançamento débito não significa dívida e crédito não significa receita",
+    "url": "/topicos-financas-registros-contabeis-e-partidas-dobradas.html"
+  },
+  {
+    "title": "Obrigações Acessórias e Controle Fiscal",
+    "block": "Finanças e Contabilidade",
+    "keywords": "obrigação principal obrigação acessória SPED ECD ECF controles e prazos SPED obrigação acessória é dever formal e pode gerar penalidade se descumprida",
+    "url": "/topicos-financas-obrigacoes-acessorias-e-controle-fiscal.html"
+  },
+  {
+    "title": "Conceitos e Tipos de Fluxo de Caixa",
+    "block": "Finanças e Contabilidade",
+    "keywords": "operacional investimento financiamento saldo inicial e final caixa e equivalentes liquidez lucro não é igual a caixa",
+    "url": "/topicos-financas-conceitos-e-tipos-de-fluxo-de-caixa.html"
+  },
+  {
+    "title": "Métodos Direto e Indireto do Fluxo de Caixa",
+    "block": "Finanças e Contabilidade",
+    "keywords": "recebimentos e pagamentos reconciliação do lucro itens sem efeito caixa variações de capital de giro separação de investimento e financiamento método indireto direto mostra fluxos; indireto reconcilia lucro com caixa",
+    "url": "/topicos-financas-metodos-direto-e-indireto-do-fluxo-de-caixa.html"
+  },
+  {
+    "title": "Gestão de Entradas e Saídas, Orçamento e Projeções",
+    "block": "Finanças e Contabilidade",
+    "keywords": "previsão de caixa sazonalidade cenários orçamento análise de desvios projeção projeção é estimativa e deve ser atualizada",
+    "url": "/topicos-financas-gestao-de-entradas-e-saidas-orcamento-e-projecoes.html"
+  },
+  {
+    "title": "Balanço Patrimonial e DRE",
+    "block": "Finanças e Contabilidade",
+    "keywords": "ativo circulante e não circulante passivo circulante e não circulante patrimônio líquido estrutura da DRE regime de competência relação com fluxo de caixa regime de competência balanço é posição em uma data; DRE explica resultado de um período",
+    "url": "/topicos-financas-balanco-patrimonial-e-dre.html"
+  },
+  {
+    "title": "Logística e Cadeia de Suprimentos",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "fluxo físico, informacional e financeiro nível de serviço custo total integração de compras, estoque, transporte e armazenagem trade-offs lead time logística é parte da cadeia de suprimentos",
+    "url": "/topicos-logistica-logistica-e-cadeia-de-suprimentos.html"
+  },
+  {
+    "title": "Sustentabilidade e Logística Verde",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "rotas eficientes ocupação de veículos redução de emissões embalagens sustentáveis logística reversa logística reversa logística reversa é parte possível da logística verde, mas não são sinônimos",
+    "url": "/topicos-logistica-sustentabilidade-e-logistica-verde.html"
+  },
+  {
+    "title": "Tecnologias Emergentes em Logística",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "IoT RFID WMS TMS robótica analytics e IA RFID WMS WMS gerencia armazém; TMS apoia transporte",
+    "url": "/topicos-logistica-tecnologias-emergentes-em-logistica.html"
+  },
+  {
+    "title": "Tipos de Transporte",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "rodoviário ferroviário aquaviário aéreo dutoviário modal modal mais rápido não é necessariamente o melhor",
+    "url": "/topicos-logistica-tipos-de-transporte.html"
+  },
+  {
+    "title": "Intermodalidade e Multimodalidade",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "combinação de modais contratos separados na intermodalidade contrato único na multimodalidade OTM terminais e transbordo OTM usar mais de um modal não basta para definir multimodalidade",
+    "url": "/topicos-logistica-intermodalidade-e-multimodalidade.html"
+  },
+  {
+    "title": "Regulação e Legislação do Transporte",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "autoridades setoriais registros e documentação responsabilidade do transportador segurança regras por modal regulação regras variam conforme o modal e a autoridade competente",
+    "url": "/topicos-logistica-regulacao-e-legislacao-do-transporte.html"
+  },
+  {
+    "title": "Classificação de Estoques",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "matéria-prima material em processo produto acabado MRO criticidade valor de consumo MRO ABC mede importância econômica; criticidade mede impacto da falta",
+    "url": "/topicos-logistica-classificacao-de-estoques.html"
+  },
+  {
+    "title": "Curva ABC",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "valor anual de consumo ordenação decrescente percentual acumulado classes A, B e C controle diferenciado classe A cortes percentuais não são universais e ABC não mede criticidade",
+    "url": "/topicos-logistica-curva-abc.html"
+  },
+  {
+    "title": "Políticas de Estoque",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "ponto de pedido quantidade de reposição revisão contínua revisão periódica estoque mínimo e máximo ponto de pedido ponto de pedido não é estoque de segurança",
+    "url": "/topicos-logistica-politicas-de-estoque.html"
+  },
+  {
+    "title": "Estoque de Segurança e Nível de Serviço",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "variabilidade de demanda variabilidade de lead time custo da falta nível de serviço capital imobilizado ruptura mais estoque aumenta disponibilidade, mas também custo",
+    "url": "/topicos-logistica-estoque-de-seguranca-e-nivel-de-servico.html"
+  },
+  {
+    "title": "Tecnologias para Automação do Controle de Estoque",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "código de barras RFID coletores móveis ERP WMS inventário automatizado ERP automatizar dado errado não o torna correto",
+    "url": "/topicos-logistica-tecnologias-para-automacao-do-controle-de-estoque.html"
+  },
+  {
+    "title": "Tipos de Armazéns e Funções",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "centro de distribuição almoxarifado armazém de matérias-primas armazém de produtos acabados cross-docking cross-docking cross-docking minimiza permanência em estoque",
+    "url": "/topicos-logistica-tipos-de-armazens-e-funcoes.html"
+  },
+  {
+    "title": "Layout e Organização de Armazéns",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "recebimento e expedição corredores endereçamento giro segregação ergonomia e segurança slotting alta densidade pode reduzir acessibilidade",
+    "url": "/topicos-logistica-layout-e-organizacao-de-armazens.html"
+  },
+  {
+    "title": "Tecnologias de Armazenagem",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "porta-paletes estruturas dinâmicas esteiras e sorters AS/RS WMS AS/RS automação deve ser compatível com volume e variedade",
+    "url": "/topicos-logistica-tecnologias-de-armazenagem.html"
+  },
+  {
+    "title": "Equipamentos de Movimentação",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "empilhadeiras paleteiras pontes rolantes talhas esteiras e transportadores guindastes capacidade nominal equipamento deve respeitar capacidade e natureza da carga",
+    "url": "/topicos-logistica-equipamentos-de-movimentacao.html"
+  },
+  {
+    "title": "Princípios de Movimentação Eficiente",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "reduzir manuseios reduzir distâncias unitizar quando adequado evitar cruzamentos padronizar manuseio movimentar menos costuma ser melhor do que apenas movimentar mais rápido",
+    "url": "/topicos-logistica-principios-de-movimentacao-eficiente.html"
+  },
+  {
+    "title": "Automação na Movimentação de Materiais",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "AGV AMR esteiras inteligentes sensores integração com WMS robótica AGV AMR AGV tende a seguir rotas definidas; AMR navega com mais autonomia",
+    "url": "/topicos-logistica-automacao-na-movimentacao-de-materiais.html"
+  },
+  {
+    "title": "Tipos e Funções de Embalagem",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "primária secundária terciária proteção informação e rastreabilidade embalagem primária embalagem de transporte não é apenas marketing",
+    "url": "/topicos-logistica-tipos-e-funcoes-de-embalagem.html"
+  },
+  {
+    "title": "Sustentabilidade dos Materiais de Embalagem",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "redução de material reutilização reciclagem materiais de menor impacto ciclo de vida reciclável mais leve nem sempre é mais sustentável se aumentar perdas do produto",
+    "url": "/topicos-logistica-sustentabilidade-dos-materiais-de-embalagem.html"
+  },
+  {
+    "title": "Unitização de Cargas",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "paletização conteinerização amarração padronização dimensional compatibilidade com equipamentos paletização unitização reduz manuseios, mas exige estabilidade",
+    "url": "/topicos-logistica-unitizacao-de-cargas.html"
+  },
+  {
+    "title": "Segurança no Transporte de Cargas",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "acondicionamento amarração distribuição de peso sinalização mercadorias perigosas acondicionamento embalagem resistente não elimina necessidade de fixação",
+    "url": "/topicos-logistica-seguranca-no-transporte-de-cargas.html"
+  },
+  {
+    "title": "Modalidades de Compras e Orçamento",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "compra pontual e fornecimento contínuo pesquisa de preços orçamento especificação critérios de seleção especificação menor preço não é sempre menor custo total",
+    "url": "/topicos-logistica-modalidades-de-compras-e-orcamento.html"
+  },
+  {
+    "title": "Planejamento de Compras",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "previsão de demanda plano de compras lead time de aquisição criticidade integração com orçamento e estoque plano de compras comprar cedo demais aumenta estoque; tarde demais causa ruptura",
+    "url": "/topicos-logistica-planejamento-de-compras.html"
+  },
+  {
+    "title": "Lei 13.303/2016 — Visão Geral",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "âmbito das estatais arts. 28 a 91 princípios e regras de contratação licitações e contratos regulamento interno estatal estatais possuem regime próprio; não aplique automaticamente a Lei 14.133",
+    "url": "/topicos-logistica-lei-13-303-2016-visao-geral.html"
+  },
+  {
+    "title": "Lei 13.303/2016 — Procedimentos e Contratação",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "planejamento procedimento competitivo critérios de julgamento habilitação contratação direta formalização inexigibilidade dispensa e inexigibilidade são hipóteses distintas",
+    "url": "/topicos-logistica-lei-13-303-2016-procedimentos-e-contratacao.html"
+  },
+  {
+    "title": "Lei 14.133/2021 e sua Relação com Estatais",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "âmbito da lei geral fases do processo licitatório planejamento e fiscalização diferença de regime relação com a Lei 13.303 âmbito não afirmar que toda contratação pública segue a Lei 14.133",
+    "url": "/topicos-logistica-lei-14-133-2021-e-sua-relacao-com-estatais.html"
+  },
+  {
+    "title": "Ciclo de Vida dos Contratos",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "planejamento formalização início execução medição alterações encerramento medição contrato não termina na assinatura; a maior parte do risco está na execução",
+    "url": "/topicos-logistica-ciclo-de-vida-dos-contratos.html"
+  },
+  {
+    "title": "Fiscalização e Gestão de Contratos",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "prazo, escopo e qualidade registros de ocorrência comunicação medição e aceite controle documental aceite fiscal não substitui o contratado na execução",
+    "url": "/topicos-logistica-fiscalizacao-e-gestao-de-contratos.html"
+  },
+  {
+    "title": "Riscos e Aditivos Contratuais",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "matriz de riscos alocação de responsabilidades monitoramento contingência aditivos aditivo aditivo exige fundamento e formalização",
+    "url": "/topicos-logistica-riscos-e-aditivos-contratuais.html"
+  },
+  {
+    "title": "Contratos Digitais e Integração com Sistemas de Gestão",
+    "block": "Logística e Gestão da Cadeia de Suprimentos",
+    "keywords": "assinatura eletrônica workflow de aprovação versionamento integração com ERP trilha de auditoria segurança workflow digital não significa informal",
+    "url": "/topicos-logistica-contratos-digitais-e-integracao-com-sistemas-de-gestao.html"
+  },
+  {
+    "title": "Hardware e Software",
+    "block": "Noções de Informática",
+    "keywords": "CPU RAM SSD/HDD placa-mãe periféricos software de sistema e aplicativos firmware RAM é volátil; armazenamento é não volátil",
+    "url": "/topicos-informatica-hardware-e-software.html"
+  },
+  {
+    "title": "Processadores e Arquiteturas",
+    "block": "Noções de Informática",
+    "keywords": "núcleo thread clock cache x86-64 ARM núcleo mais GHz não garante melhor desempenho entre arquiteturas diferentes",
+    "url": "/topicos-informatica-processadores-e-arquiteturas.html"
+  },
+  {
+    "title": "Windows 11 — Interface e Administração Básica",
+    "block": "Noções de Informática",
+    "keywords": "Menu Iniciar barra de tarefas Configurações Gerenciador de Tarefas contas e sessões processo fechar janela não é igual a finalizar processo travado",
+    "url": "/topicos-informatica-windows-11-interface-e-administracao-basica.html"
+  },
+  {
+    "title": "Windows 11 — Arquivos, Pastas e Utilitários",
+    "block": "Noções de Informática",
+    "keywords": "caminhos extensões copiar e mover Lixeira ZIP pesquisa e propriedades extensão renomear extensão não converte formato",
+    "url": "/topicos-informatica-windows-11-arquivos-pastas-e-utilitarios.html"
+  },
+  {
+    "title": "Word 2024",
+    "block": "Noções de Informática",
+    "keywords": "fonte e parágrafo estilos cabeçalho e rodapé quebra de página tabelas e imagens localizar e substituir estilo estilo é estrutura reutilizável, não só formatação manual",
+    "url": "/topicos-informatica-word-2024.html"
+  },
+  {
+    "title": "Excel 2024 — Fundamentos e Referências",
+    "block": "Noções de Informática",
+    "keywords": "células e intervalos fórmulas referência relativa absoluta mista preenchimento intervalo $ fixa linha e/ou coluna conforme posição",
+    "url": "/topicos-informatica-excel-2024-fundamentos-e-referencias.html"
+  },
+  {
+    "title": "Excel 2024 — Funções Essenciais",
+    "block": "Noções de Informática",
+    "keywords": "SOMA MÉDIA SE CONT.SE SOMASE PROCV/PROCX FILTRO função PROCV procura na primeira coluna da matriz; PROCX é mais flexível",
+    "url": "/topicos-informatica-excel-2024-funcoes-essenciais.html"
+  },
+  {
+    "title": "PowerPoint 2024",
+    "block": "Noções de Informática",
+    "keywords": "tema e layout slide mestre transições animações mídia modo apresentador slide mestre transição atua entre slides; animação atua em objetos",
+    "url": "/topicos-informatica-powerpoint-2024.html"
+  },
+  {
+    "title": "Internet, Intranet e Navegadores",
+    "block": "Noções de Informática",
+    "keywords": "URL HTTPS DNS cookies cache abas e favoritos intranet cookie cache intranet pode usar tecnologias da internet, mas com acesso restrito",
+    "url": "/topicos-informatica-internet-intranet-e-navegadores.html"
+  },
+  {
+    "title": "Segurança da Informação",
+    "block": "Noções de Informática",
+    "keywords": "confidencialidade integridade disponibilidade autenticação autorização MFA phishing backup MFA autenticação prova identidade; autorização define o que pode ser feito",
+    "url": "/topicos-informatica-seguranca-da-informacao.html"
+  },
+  {
+    "title": "LGPD — Conceitos, Agentes e Princípios",
+    "block": "Noções de Informática",
+    "keywords": "dado pessoal dado sensível titular controlador operador encarregado princípios titular controlador decide; operador trata em nome do controlador",
+    "url": "/topicos-informatica-lgpd-conceitos-agentes-e-principios.html"
+  },
+  {
+    "title": "LGPD — Bases Legais, Direitos e Segurança",
+    "block": "Noções de Informática",
+    "keywords": "bases legais direitos do titular segurança e prevenção incidentes retenção e minimização base legal consentimento é uma base possível, não a única",
+    "url": "/topicos-informatica-lgpd-bases-legais-direitos-e-seguranca.html"
+  }
+]

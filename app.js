@@ -1,12 +1,110 @@
+const K='transpetro2026.progress.v3';
+const T='transpetro2026.theme';
+const F='transpetro2026.font';
 
-const K='transpetro2026.progress.v2';const T='transpetro2026.theme';
-if('serviceWorker'in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));}
-let deferredPrompt=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;document.querySelectorAll('[data-install]').forEach(b=>b.hidden=false)});
-document.addEventListener('click',async e=>{const b=e.target.closest('[data-install]');if(b&&deferredPrompt){await deferredPrompt.prompt();deferredPrompt=null;}const m=e.target.closest('[data-menu]');if(m)document.querySelector('.sidebar')?.classList.toggle('open');if(e.target.closest('[data-theme]')){const n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;localStorage.setItem(T,n)}if(e.target.closest('[data-font-plus]'))setFont(1);if(e.target.closest('[data-font-minus]'))setFont(-1);const c=e.target.closest('[data-complete]');if(c){const id=document.body.dataset.topicId;if(id){const p=read();p[id]={status:'completed',updatedAt:new Date().toISOString()};localStorage.setItem(K,JSON.stringify(p));c.classList.add('done');c.textContent='Concluído ✓';updateProgress();}}});
-function read(){try{return JSON.parse(localStorage.getItem(K))||{}}catch{return {}}}
-function setFont(d){let v=parseInt(localStorage.getItem('transpetro.font')||'16',10);v=Math.max(14,Math.min(22,v+d));localStorage.setItem('transpetro.font',v);document.documentElement.style.setProperty('--fs',v+'px')}
-function applyPrefs(){document.documentElement.dataset.theme=localStorage.getItem(T)||'light';setFont(0)}
-function updateProgress(){const p=read();const all=[...document.querySelectorAll('[data-topic-id]')];if(!all.length)return;const done=all.filter(x=>p[x.dataset.topicId]?.status==='completed').length;const pc=Math.round(done/all.length*100);document.querySelectorAll('[data-progress-bar]').forEach(x=>x.style.width=pc+'%');document.querySelectorAll('[data-progress-label]').forEach(x=>x.textContent=pc+'%');document.querySelectorAll('[data-done-count]').forEach(x=>x.textContent=done);}
-async function initSearch(){const inp=document.querySelector('[data-search]');if(!inp)return;let data=[];try{data=await fetch('/data/search-index.json').then(r=>r.json())}catch{};let box=document.querySelector('[data-search-results]');inp.addEventListener('input',()=>{const q=inp.value.trim().toLowerCase();if(q.length<2){box.hidden=true;box.innerHTML='';return}const rows=data.filter(x=>(x.title+' '+x.block+' '+x.keywords).toLowerCase().includes(q)).slice(0,12);box.innerHTML=rows.map(x=>`<a href="${x.url}"><strong>${x.title}</strong><br><small>${x.block}</small></a>`).join('')||'<div style="padding:.8rem">Nenhum tópico encontrado.</div>';box.hidden=false;});}
-function net(){document.querySelectorAll('[data-network]').forEach(x=>x.textContent=navigator.onLine?'Online':'Offline — conteúdo salvo')}
-addEventListener('online',net);addEventListener('offline',net);document.addEventListener('DOMContentLoaded',()=>{applyPrefs();updateProgress();initSearch();net();const id=document.body.dataset.topicId;if(id){const p=read();if(p[id]?.status==='completed'){const b=document.querySelector('[data-complete]');if(b){b.classList.add('done');b.textContent='Concluído ✓'}}}});
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(console.error);
+  });
+}
+
+function readProgress(){
+  try{return JSON.parse(localStorage.getItem(K))||{};}catch{return {};}
+}
+function setFont(delta=0){
+  let v=parseInt(localStorage.getItem(F)||'16',10);
+  v=Math.max(14,Math.min(22,v+delta));
+  localStorage.setItem(F,String(v));
+  document.documentElement.style.setProperty('--fs',v+'px');
+}
+function applyPrefs(){
+  document.documentElement.dataset.theme=localStorage.getItem(T)||'dark';
+  setFont(0);
+}
+function updateProgress(){
+  const p=readProgress();
+  const all=[...document.querySelectorAll('[data-topic-id]')];
+  if(!all.length)return;
+  const ids=[...new Set(all.map(x=>x.dataset.topicId).filter(Boolean))];
+  const done=ids.filter(id=>p[id]?.status==='completed').length;
+  const pc=ids.length?Math.round(done/ids.length*100):0;
+  document.querySelectorAll('[data-progress-bar]').forEach(x=>x.style.width=pc+'%');
+  document.querySelectorAll('[data-progress-label]').forEach(x=>x.textContent=pc+'%');
+  document.querySelectorAll('[data-done-count]').forEach(x=>x.textContent=done);
+}
+async function initSearch(){
+  const inp=document.querySelector('[data-search]');
+  const box=document.querySelector('[data-search-results]');
+  if(!inp||!box)return;
+  let data=[];
+  try{data=await fetch('/search-index.json',{cache:'no-store'}).then(r=>r.json());}catch{}
+  inp.addEventListener('input',()=>{
+    const q=inp.value.trim().toLowerCase();
+    if(q.length<2){box.hidden=true;box.innerHTML='';return;}
+    const rows=data.filter(x=>(x.title+' '+x.block+' '+(x.keywords||'')).toLowerCase().includes(q)).slice(0,12);
+    box.innerHTML=rows.map(x=>`<a href="${x.url}"><strong>${x.title}</strong><br><small>${x.block}</small></a>`).join('')||'<div style="padding:.8rem">Nenhum tópico encontrado.</div>';
+    box.hidden=false;
+  });
+}
+function updateNetwork(){
+  document.querySelectorAll('[data-network]').forEach(x=>{
+    x.textContent=navigator.onLine?'Online':'Offline — conteúdo salvo';
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+  applyPrefs();
+  updateProgress();
+  initSearch();
+  updateNetwork();
+
+  document.querySelectorAll('[data-theme]').forEach(btn=>{
+    btn.addEventListener('click', ev=>{
+      ev.preventDefault();
+      ev.stopPropagation();
+      const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+      document.documentElement.dataset.theme=next;
+      localStorage.setItem(T,next);
+    });
+  });
+
+  document.querySelectorAll('[data-font-plus]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();setFont(1);}));
+  document.querySelectorAll('[data-font-minus]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();setFont(-1);}));
+  document.querySelectorAll('[data-menu]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();document.querySelector('.sidebar')?.classList.toggle('open');}));
+
+  document.querySelectorAll('[data-complete]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id=document.body.dataset.topicId;
+      if(!id)return;
+      const p=readProgress();
+      p[id]={status:'completed',updatedAt:new Date().toISOString()};
+      localStorage.setItem(K,JSON.stringify(p));
+      btn.classList.add('done');
+      btn.textContent='Concluído ✓';
+      updateProgress();
+    });
+  });
+
+  const id=document.body.dataset.topicId;
+  if(id && readProgress()[id]?.status==='completed'){
+    const b=document.querySelector('[data-complete]');
+    if(b){b.classList.add('done');b.textContent='Concluído ✓';}
+  }
+});
+
+window.addEventListener('online',updateNetwork);
+window.addEventListener('offline',updateNetwork);
+
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  document.querySelectorAll('[data-install]').forEach(b=>b.hidden=false);
+});
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('[data-install]');
+  if(b && deferredPrompt){
+    await deferredPrompt.prompt();
+    deferredPrompt=null;
+  }
+});
