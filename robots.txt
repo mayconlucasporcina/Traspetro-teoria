@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://traspetro-teoria.vercel.app/sitemap.xml

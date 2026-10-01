@@ -1,25 +1,39 @@
 {
-  "name": "Transpetro 2026 — Administração e Controle",
-  "short_name": "Transpetro 2026",
   "id": "/",
-  "start_url": "/",
+  "name": "Estudos Transpetro 2026 — Administração e Controle",
+  "short_name": "Transpetro 2026",
+  "description": "Material independente de teoria dos conhecimentos específicos para o PSP Transpetro 2026 — Administração e Controle.",
+  "lang": "pt-BR",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#f5f7fa",
-  "theme_color": "#0b3b66",
-  "description": "Apostila teórica dos conhecimentos específicos de Administração e Controle — Transpetro 2026",
+  "background_color": "#f4f7fb",
+  "theme_color": "#0b4f7c",
+  "prefer_related_applications": false,
   "icons": [
     {
-      "src": "/icon-192.png",
+      "src": "/assets/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
+      "src": "/assets/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/icon-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
