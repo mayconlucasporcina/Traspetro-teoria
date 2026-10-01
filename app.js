@@ -18,7 +18,7 @@ function setFont(delta=0){
   document.documentElement.style.setProperty('--fs',v+'px');
 }
 function applyPrefs(){
-  document.documentElement.dataset.theme=localStorage.getItem(T)||'dark';
+  document.documentElement.dataset.colorTheme=localStorage.getItem(T)||'dark';
   setFont(0);
 }
 function updateProgress(){
@@ -58,12 +58,12 @@ document.addEventListener('DOMContentLoaded',()=>{
   initSearch();
   updateNetwork();
 
-  document.querySelectorAll('[data-theme]').forEach(btn=>{
+  document.querySelectorAll('button[data-theme]').forEach(btn=>{
     btn.addEventListener('click', ev=>{
       ev.preventDefault();
       ev.stopPropagation();
-      const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
-      document.documentElement.dataset.theme=next;
+      const next=document.documentElement.dataset.colorTheme==='dark'?'light':'dark';
+      document.documentElement.dataset.colorTheme=next;
       localStorage.setItem(T,next);
     });
   });
