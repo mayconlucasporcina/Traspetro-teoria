@@ -1,110 +1,14 @@
-const K='transpetro2026.progress.v3';
-const T='transpetro2026.theme';
-const F='transpetro2026.font';
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(console.error);
-  });
-}
-
-function readProgress(){
-  try{return JSON.parse(localStorage.getItem(K))||{};}catch{return {};}
-}
-function setFont(delta=0){
-  let v=parseInt(localStorage.getItem(F)||'16',10);
-  v=Math.max(14,Math.min(22,v+delta));
-  localStorage.setItem(F,String(v));
-  document.documentElement.style.setProperty('--fs',v+'px');
-}
-function applyPrefs(){
-  document.documentElement.dataset.colorTheme=localStorage.getItem(T)||'dark';
-  setFont(0);
-}
-function updateProgress(){
-  const p=readProgress();
-  const all=[...document.querySelectorAll('[data-topic-id]')];
-  if(!all.length)return;
-  const ids=[...new Set(all.map(x=>x.dataset.topicId).filter(Boolean))];
-  const done=ids.filter(id=>p[id]?.status==='completed').length;
-  const pc=ids.length?Math.round(done/ids.length*100):0;
-  document.querySelectorAll('[data-progress-bar]').forEach(x=>x.style.width=pc+'%');
-  document.querySelectorAll('[data-progress-label]').forEach(x=>x.textContent=pc+'%');
-  document.querySelectorAll('[data-done-count]').forEach(x=>x.textContent=done);
-}
-async function initSearch(){
-  const inp=document.querySelector('[data-search]');
-  const box=document.querySelector('[data-search-results]');
-  if(!inp||!box)return;
-  let data=[];
-  try{data=await fetch('/search-index.json',{cache:'no-store'}).then(r=>r.json());}catch{}
-  inp.addEventListener('input',()=>{
-    const q=inp.value.trim().toLowerCase();
-    if(q.length<2){box.hidden=true;box.innerHTML='';return;}
-    const rows=data.filter(x=>(x.title+' '+x.block+' '+(x.keywords||'')).toLowerCase().includes(q)).slice(0,12);
-    box.innerHTML=rows.map(x=>`<a href="${x.url}"><strong>${x.title}</strong><br><small>${x.block}</small></a>`).join('')||'<div style="padding:.8rem">Nenhum tópico encontrado.</div>';
-    box.hidden=false;
-  });
-}
-function updateNetwork(){
-  document.querySelectorAll('[data-network]').forEach(x=>{
-    x.textContent=navigator.onLine?'Online':'Offline — conteúdo salvo';
-  });
-}
-
-document.addEventListener('DOMContentLoaded',()=>{
-  applyPrefs();
-  updateProgress();
-  initSearch();
-  updateNetwork();
-
-  document.querySelectorAll('button[data-theme]').forEach(btn=>{
-    btn.addEventListener('click', ev=>{
-      ev.preventDefault();
-      ev.stopPropagation();
-      const next=document.documentElement.dataset.colorTheme==='dark'?'light':'dark';
-      document.documentElement.dataset.colorTheme=next;
-      localStorage.setItem(T,next);
-    });
-  });
-
-  document.querySelectorAll('[data-font-plus]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();setFont(1);}));
-  document.querySelectorAll('[data-font-minus]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();setFont(-1);}));
-  document.querySelectorAll('[data-menu]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();document.querySelector('.sidebar')?.classList.toggle('open');}));
-
-  document.querySelectorAll('[data-complete]').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const id=document.body.dataset.topicId;
-      if(!id)return;
-      const p=readProgress();
-      p[id]={status:'completed',updatedAt:new Date().toISOString()};
-      localStorage.setItem(K,JSON.stringify(p));
-      btn.classList.add('done');
-      btn.textContent='Concluído ✓';
-      updateProgress();
-    });
-  });
-
-  const id=document.body.dataset.topicId;
-  if(id && readProgress()[id]?.status==='completed'){
-    const b=document.querySelector('[data-complete]');
-    if(b){b.classList.add('done');b.textContent='Concluído ✓';}
-  }
-});
-
-window.addEventListener('online',updateNetwork);
-window.addEventListener('offline',updateNetwork);
-
-let deferredPrompt=null;
-window.addEventListener('beforeinstallprompt',e=>{
-  e.preventDefault();
-  deferredPrompt=e;
-  document.querySelectorAll('[data-install]').forEach(b=>b.hidden=false);
-});
-document.addEventListener('click',async e=>{
-  const b=e.target.closest('[data-install]');
-  if(b && deferredPrompt){
-    await deferredPrompt.prompt();
-    deferredPrompt=null;
-  }
-});
+(()=>{const D=window.TRANS_DATA,$=s=>document.querySelector(s),KEY='tp.final.progress.v2',TK='tp.final.theme.v2',FK='tp.final.font.v2';let current=null;const groups=[...new Set(D.map(x=>x.block))];
+const esc=s=>String(s).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]||c));
+function prog(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch{return {}}}function save(p){localStorage.setItem(KEY,JSON.stringify(p));renderNav();updateProgress()}
+function updateProgress(){const p=prog(),d=D.filter(x=>p[x.id]).length,pc=Math.round(d/D.length*100);$('#done').textContent=d;$('#total').textContent=D.length;$('#pct').textContent=pc+'%';$('#bar').style.width=pc+'%'}
+function renderNav(){const p=prog();let h='';for(const g of groups){h+=`<div class="navGroup">${esc(g)}</div>`;D.filter(x=>x.block===g).forEach(t=>h+=`<button data-id="${t.id}" class="${current===t.id?'active ':''}${p[t.id]?'done':''}"><span class="dot">${p[t.id]?'✓':''}</span><span>${esc(t.title)}</span></button>`)}$('#nav').innerHTML=h;$('#nav').querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>openLesson(b.dataset.id))}
+function diagram(v){const n=v.nodes||[],W=900,H=320,col=['#38bdf8','#34d399','#fbbf24','#a78bfa','#fb7185','#22d3ee'];let x='';if(v.type==='triangle'){x=`<polygon points="450,45 130,270 770,270" fill="none" stroke="var(--accent)" stroke-width="4"/><text x="450" y="90">${esc(n[0])}</text><text x="245" y="250">${esc(n[1])}</text><text x="655" y="250">${esc(n[2])}</text><circle cx="450" cy="190" r="52" fill="var(--surface2)" stroke="var(--accent)"/><text x="450" y="190">Integração</text>`}else if(v.type==='curve'){x=`<line x1="110" y1="265" x2="810" y2="265" stroke="var(--muted)"/><line x1="110" y1="265" x2="110" y2="55" stroke="var(--muted)"/><path d="M110 250 C250 245 390 215 520 155 S710 65 800 40" fill="none" stroke="var(--accent)" stroke-width="6"/><text x="470" y="300">tempo</text>`}else if(v.type==='bars'){let vals=v.values||[70,20,8,4];vals.forEach((a,i)=>{let bx=130+i*170,bh=a*2.5;x+=`<rect x="${bx}" y="${265-bh}" width="110" height="${bh}" rx="9" fill="${col[i%col.length]}aa"/><text x="${bx+55}" y="290">${esc(n[i]||'')}</text>`});x+=`<line x1="90" y1="265" x2="830" y2="265" stroke="var(--muted)"/>`}else if(v.type==='venn'){x=`<circle cx="350" cy="160" r="110" fill="#38bdf833" stroke="#38bdf8"/><circle cx="550" cy="160" r="110" fill="#34d39933" stroke="#34d399"/><circle cx="450" cy="235" r="110" fill="#fbbf2433" stroke="#fbbf24"/><text x="300" y="105">${esc(n[0]||'')}</text><text x="600" y="105">${esc(n[1]||'')}</text><text x="450" y="290">${esc(n[2]||'')}</text><text x="450" y="185">SGI</text>`}else{const gap=(W-120)/Math.max(n.length,1);n.forEach((a,i)=>{const cx=60+gap/2+i*gap,bw=Math.min(135,gap-20);x+=`<rect x="${cx-bw/2}" y="118" width="${bw}" height="82" rx="18" fill="${col[i%col.length]}22" stroke="${col[i%col.length]}" stroke-width="2"/><text x="${cx}" y="158">${esc(a)}</text>`;if(i<n.length-1){const nx=60+gap/2+(i+1)*gap;x+=`<line x1="${cx+bw/2+5}" y1="159" x2="${nx-bw/2-14}" y2="159" stroke="var(--muted)" stroke-width="3"/><polygon points="${nx-bw/2-14},153 ${nx-bw/2-2},159 ${nx-bw/2-14},165" fill="var(--muted)"/>`}})}return `<figure class="diagram"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(v.title)}"><style>text{fill:var(--ink);font-family:system-ui,sans-serif;font-size:17px;text-anchor:middle;dominant-baseline:middle}</style><text x="450" y="28" font-weight="700">${esc(v.title)}</text>${x}</svg><figcaption>${esc(v.caption||'Diagrama pedagógico original.')}</figcaption></figure>`}
+function openLesson(id,push=true){const t=D.find(x=>x.id===id);if(!t)return;current=id;$('#home').hidden=true;$('#lesson').hidden=false;const p=prog(),idx=D.indexOf(t),prev=D[idx-1],next=D[idx+1];const concepts=t.concepts.map(c=>`<div class="concept"><b>${esc(c.term)}</b>${esc(c.text)}</div>`).join(''),steps=t.process.map(s=>`<li>${esc(s)}</li>`).join(''),cmp=t.compare.map(r=>`<tr><th>${esc(r[0])}</th><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join(''),tr=t.traps.map(x=>`<li>${esc(x)}</li>`).join(''),mem=t.memory.map(x=>`<li>${esc(x)}</li>`).join(''),src=(t.sources||[]).map(u=>`<li><a href="${u}" target="_blank" rel="noopener">${esc(u)}</a></li>`).join('');$('#lesson').innerHTML=`<div class="crumb"><button id="homeBtn" class="btn">← Início</button><span>${esc(t.block)} · ${esc(t.code)}</span></div><span class="eyebrow">CONHECIMENTOS ESPECÍFICOS</span><h1>${esc(t.title)}</h1><div class="meta"><span class="pill">Edital · ${esc(t.code)}</span><span class="pill">Teoria completa</span><span class="pill">Revisão 01/10/2026</span></div><section class="section"><h2>Entenda primeiro</h2><p>${esc(t.overview)}</p>${t.formula?`<div class="formula">${esc(t.formula)}</div>`:''}</section><section class="section"><h2>Conceitos explicados</h2><div class="concepts">${concepts}</div></section><section class="section"><h2>Como funciona na prática</h2><ol class="steps">${steps}</ol></section><section class="section"><h2>Diferenças importantes</h2><div class="tableWrap"><table class="compare"><tbody>${cmp}</tbody></table></div></section><section class="section"><h2>Visualize</h2>${diagram(t.visual)}</section><section class="section"><h2>Exemplo aplicado</h2><div class="callout example">${esc(t.example)}</div></section><section class="section"><h2>Pegadinhas e erros frequentes</h2><div class="callout trap"><ul>${tr}</ul></div></section><section class="section"><h2>O que guardar</h2><ul class="remember">${mem}</ul></section>${src?`<section class="section sources"><h2>Fontes oficiais / técnicas</h2><ul>${src}</ul></section>`:''}<div class="actions"><button id="prev" class="btn" ${prev?'':'disabled'}>${prev?'← '+esc(prev.title):'Início'}</button><button id="complete" class="btn primary ${p[t.id]?'done':''}">${p[t.id]?'Concluído ✓':'Marcar como concluído'}</button><button id="next" class="btn" ${next?'':'disabled'}>${next?esc(next.title)+' →':'Fim'}</button></div>`;$('#homeBtn').onclick=home;if(prev)$('#prev').onclick=()=>openLesson(prev.id);if(next)$('#next').onclick=()=>openLesson(next.id);$('#complete').onclick=()=>{const q=prog();q[t.id]=!q[t.id];save(q);openLesson(t.id,false)};if(push)history.replaceState(null,'','#'+encodeURIComponent(t.id));renderNav();window.scrollTo({top:0,behavior:'smooth'});closeMenu()}
+function home(){current=null;history.replaceState(null,'',location.pathname);$('#lesson').hidden=true;$('#home').hidden=false;renderNav();closeMenu();window.scrollTo({top:0,behavior:'smooth'})}
+function cards(){const d={'Processos Administrativos e Legislação':'RH, SGI, patrimônio, manutenção e indicadores.','Finanças e Contabilidade':'Matemática financeira, registros, fluxo de caixa e demonstrações.','Logística e Gestão da Cadeia de Suprimentos':'Supply chain, transportes, estoque, armazém, compras e contratos.','Noções de Informática':'Windows 11, Office 2024, internet, segurança e LGPD.'};$('#cards').innerHTML=groups.map(g=>`<div class="card" data-g="${esc(g)}"><h3>${esc(g)}</h3><p>${D.filter(t=>t.block===g).length} unidades · ${esc(d[g])}</p></div>`).join('');$('#cards').querySelectorAll('[data-g]').forEach(c=>c.onclick=()=>openLesson(D.find(t=>t.block===c.dataset.g).id))}
+function search(){const inp=$('#search'),r=$('#results');inp.oninput=()=>{const q=inp.value.trim().toLowerCase();if(q.length<2){r.hidden=true;r.innerHTML='';return}const a=D.filter(t=>(t.title+' '+t.block+' '+t.overview+' '+t.concepts.map(c=>c.term+' '+c.text).join(' ')).toLowerCase().includes(q)).slice(0,14);r.innerHTML=a.map(t=>`<button data-id="${t.id}"><b>${esc(t.title)}</b><small>${esc(t.block)}</small></button>`).join('')||'<button disabled>Nenhum resultado</button>';r.hidden=false;r.querySelectorAll('[data-id]').forEach(b=>b.onclick=()=>{openLesson(b.dataset.id);inp.value='';r.hidden=true})};document.addEventListener('click',e=>{if(!e.target.closest('.side'))r.hidden=true})}
+function prefs(){let fs=parseInt(localStorage.getItem(FK)||'17');document.documentElement.style.setProperty('--fs',fs+'px');document.documentElement.dataset.theme=localStorage.getItem(TK)||'dark';$('#theme').onclick=e=>{e.stopPropagation();let n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;localStorage.setItem(TK,n)};$('#larger').onclick=e=>{e.stopPropagation();fs=Math.min(22,fs+1);localStorage.setItem(FK,fs);document.documentElement.style.setProperty('--fs',fs+'px')};$('#smaller').onclick=e=>{e.stopPropagation();fs=Math.max(14,fs-1);localStorage.setItem(FK,fs);document.documentElement.style.setProperty('--fs',fs+'px')}}
+function openMenu(){$('#side').classList.add('open');$('#scrim').hidden=false}function closeMenu(){$('#side').classList.remove('open');$('#scrim').hidden=true}function menu(){$('#menu').onclick=e=>{e.stopPropagation();$('#side').classList.contains('open')?closeMenu():openMenu()};$('#scrim').onclick=closeMenu}
+function start(){groups.splice(0,groups.length,...[...new Set(D.map(x=>x.block))]);$('#statTopics').textContent=D.length;cards();renderNav();updateProgress();search();prefs();menu();let id=decodeURIComponent(location.hash.slice(1));if(id&&D.some(t=>t.id===id))openLesson(id,false);if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}))}document.addEventListener('DOMContentLoaded',start)})();

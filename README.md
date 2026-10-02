@@ -1,17 +1,3 @@
-# Estudos Transpetro 2026 — Administração e Controle
+# Estudos Transpetro 2026
 
-Apostila digital independente para os conhecimentos específicos do PSP Transpetro 2026.
-
-- 69 unidades teóricas
-- busca local
-- progresso no dispositivo
-- modo claro/escuro
-- PWA e cache offline
-- diagramas originais em SVG
-- fontes oficiais por tópico
-
-## Publicação
-O projeto é estático e pode ser publicado diretamente no Vercel. Faça upload de todo o conteúdo deste diretório na raiz do repositório conectado.
-
-## Aviso
-Material independente de estudos. Não afiliado à Transpetro nem à Fundação Cesgranrio.
+PWA single-page com 56 unidades de conhecimentos específicos. Tópicos usam hash; não existem rotas separadas que possam gerar 404.
